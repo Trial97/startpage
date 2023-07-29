@@ -1,0 +1,145 @@
+:root {
+  --color-bg: #373b41;
+  --color-fg: #aaaaaa;
+  --color-link: #51948d;
+  --color-link-visited: #92b2ca;
+  --color-link-hover: #535d6c;
+}
+
+html,
+body {
+  background: var(--color-bg);
+  color: var(--color-fg);
+  font-family: "monospace";
+  height: 100%;
+  width: 100%;
+  margin: 0;
+  padding: 0;
+}
+
+.container {
+  display: grid;
+  grid-template-columns: 1fr 460px 600px 1fr;
+  grid-template-areas: ". left right .";
+  column-gap: 80px;
+  justify-items: center;
+  align-items: center;
+  min-height: 100%;
+}
+
+.center-container {
+  position: absolute;
+  height: 50%;
+  width: 100%;
+}
+
+.head {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  font-size: 40px;
+  padding-top: 60px;
+}
+
+.category {
+  display: flex;
+  flex-direction: column;
+  width: 180px;
+}
+
+.bookmarks {
+  display: flex;
+  justify-content: center;
+}
+
+.links {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  padding-top: 20px;
+  padding-bottom: 20px;
+}
+
+.title {
+  font-size: 20px;
+}
+
+li {
+  font-size: 16px;
+  list-style-type: none;
+  padding: 5px;
+}
+
+a:link {
+  text-decoration: none;
+  color: var(--color-link);
+}
+
+a:visited {
+  color: var(--color-link-visited);
+}
+
+a:hover {
+  color: var(--color-link-hover);
+}
+
+.blinking {
+  animation: opacity 1s ease-in-out infinite;
+  opacity: 1;
+}
+
+@keyframes opacity {
+  0% {
+    opacity: 1;
+  }
+
+  50% {
+    opacity: 0;
+  }
+
+  100% {
+    opacity: 1;
+  }
+}
+
+.dropdown {
+  position: absolute;
+  padding: 10px;
+  right: 0.4em;
+}
+
+.menu {
+  position: fixed;
+  color: white;
+  position: absolute;
+  top: 0.24em;
+
+  background-color: var(--color-bg) !important;
+  border: 1px solid var(--color-bg) !important;
+  text-shadow: none !important;
+  right: 0.4em;
+}
+
+.menu:after {
+  content: "\2807";
+  font-size: 20px;
+}
+
+.dropdown-content {
+  display: none;
+  position: relative;
+  margin-top: 20px;
+  min-width: 80px;
+  overflow: auto;
+  box-shadow: 0px 8px 16px 0px rgba(0, 0, 0, 0.2);
+  z-index: 1;
+}
+
+.show {
+  display: block;
+}
+
+.importDialog form {
+  background: var(--color-bg);
+  color: var(--color-fg);
+}

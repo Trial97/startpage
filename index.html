@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <link rel="icon" type="image/x-icon" href="favicon.ico" />
+    <link rel="stylesheet" type="text/css" href="style.css" />
+    <script src="index.js"></script>
+    <title>New Tab</title>
+  </head>
+
+  <body>
+    <div class="dropdown">
+      <button class="menu" onclick="showDropdown()"></button>
+      <div id="myDropdown" class="dropdown-content">
+        <li><a onclick="showImportDialog()">Import</a></li>
+        <li><a onclick="exportPaste()">Export</a></li>
+      </div>
+    </div>
+    <div class="container">
+      <div class="center-container">
+        <div class="head">
+          <p>>> cd ~/<span class="blinking">_</span></p>
+        </div>
+        <div class="bookmarks"></div>
+      </div>
+    </div>
+    <dialog id="importDialog">
+      <form method="dialog">
+        <p>
+          <label for="importText">Import Text:</label>
+        </p>
+        <p>
+          <textarea id="importText" name="importText" rows="4" cols="50">
+          </textarea>
+        </p>
+        <div>
+          <button type="reset" onclick="cancelImportDialog()">Cancel</button>
+          <button type="submit" onclick="confirmImportDialog()">Confirm</button>
+        </div>
+      </form>
+    </dialog>
+    <script>
+      loadCategories();
+    </script>
+  </body>
+</html>
